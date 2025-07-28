@@ -1,4 +1,4 @@
-const repositorio = require('./Repositorio')
+const repo = require('./Repositorio')
 class ServicoCalculoFatura{
 
     constructor(repo){
@@ -35,7 +35,7 @@ class ServicoCalculoFatura{
         return total;
     }
 
-    calcularTotalFatura(apre){
+    calcularTotalFatura(apresentacoes){
         let total = 0;
         for(let apre of apresentacoes){
             total += this.calcularTotalApresentacao(apre);
@@ -43,7 +43,7 @@ class ServicoCalculoFatura{
         return total;
     }
 
-    calcularTotalCreditos(apre){
+    calcularTotalCreditos(apresentacoes){
         let creditos = 0;
         for(let apre of apresentacoes){
             creditos += this.calcularCredito(apre);

@@ -5,7 +5,7 @@ class Repositorio{
     }
 
     getPeca(apresentacao) {
-        return pecas[apresentacao.id]
+        return this.pecas[apresentacao.id]
     }
 
 }
