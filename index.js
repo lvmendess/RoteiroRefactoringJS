@@ -3,7 +3,7 @@ const ServicoCalculoFatura = require('./ServicoCalculoFatura');
 const repo = require('./Repositorio')
 const calc = new ServicoCalculoFatura(new repo());
 
-function gerarFaturaStr(fatura, calc, repo) {
+function gerarFaturaStr(fatura, calc) {
   let faturaStr = `Fatura ${fatura.cliente}\n`;
 
   for (let apre of fatura.apresentacoes) {
@@ -33,6 +33,6 @@ function formatarMoeda(valor) {
 }
 
 const faturas = JSON.parse(readFileSync('./faturas.json'));
-const faturaStr = gerarFaturaStr(faturas, calc, repo);
+const faturaStr = gerarFaturaStr(faturas, calc);
 console.log(faturaStr);
 //console.log(faturaHTML);
